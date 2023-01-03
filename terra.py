@@ -692,7 +692,7 @@ if about:
 
     with a2: 
         col1, col2= st.columns(2) 
-        st.write(""" #### This dashboard was created using the Flipsidecrypto database for the "Terra - 5. Terradash, Part 4: Bringing It All Together" bounty by Memtricsdao.""")
+        st.write(""" #### This dashboard was created using the Flipsidecrypto database for the "Terra - 5. Terradash, Part 4: Bringing It All Together" bounty by Metricsdao.""")
 
     with a3:
          st.write("""
