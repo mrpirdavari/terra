@@ -153,11 +153,11 @@ if transactions:
         fig=px.line(transaction_data, x='DATE', y=['TXS','CUMULATIVE_TXS'])#, labels={'x':'Date','y':'Transactions'})
         
         data= transaction_data; x='DATE'; y=['TXS','CUMULATIVE_TXS']; a=col1; tit= 'Weekly Number of LUNA Transactions'
-        xtit='Date'; ytit = 'Transactions' ; w=700; h=450 ; logy = False 
+        xtit='Date'; ytit = 'Transactions' ; w=600; h=450 ; logy = False 
         line_plot(data,x,y,a,tit,xtit,ytit,w,h,logy)
    
         data= transaction_data; x='DATE'; y=['LUNA_VOLUME','CUMULATIVE_VOLUME']; 
-        a=col2; tit= 'Weekly Volume of LUNA Transactions'; xtit='Date'; ytit = 'Volume' ; w=700; h=450 ; logy = False       
+        a=col2; tit= 'Weekly Volume of LUNA Transactions'; xtit='Date'; ytit = 'Volume' ; w=600; h=450 ; logy = False       
         line_plot(data,x,y,a,tit,xtit,ytit,w,h,logy)
         
         # fig2=px.line(transaction_data, x='DATE', y=['LUNA_VOLUME','CUMULATIVE_VOLUME'])#, labels={'x':'Date','y':'Transactions'})
