@@ -85,6 +85,8 @@ if introduction:
     i2 = st.container()
 
     col1, col2 = st.columns(2)
+    
+    st.info('##### Please select the wide mode from the settings to have a better appearance of the charts in this dashboard.')
 
     with i1:
          st.write("""
