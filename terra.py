@@ -153,11 +153,11 @@ if transactions:
         fig=px.line(transaction_data, x='DATE', y=['TXS','CUMULATIVE_TXS'])#, labels={'x':'Date','y':'Transactions'})
         
         data= transaction_data; x='DATE'; y=['TXS','CUMULATIVE_TXS']; a=col1; tit= 'Weekly Number of LUNA Transactions'
-        xtit='Date'; ytit = 'Transactions' ; w=600; h=450 ; logy = False 
+        xtit='Date'; ytit = 'Transactions' ; w=550; h=450 ; logy = False 
         line_plot(data,x,y,a,tit,xtit,ytit,w,h,logy)
    
         data= transaction_data; x='DATE'; y=['LUNA_VOLUME','CUMULATIVE_VOLUME']; 
-        a=col2; tit= 'Weekly Volume of LUNA Transactions'; xtit='Date'; ytit = 'Volume' ; w=600; h=450 ; logy = False       
+        a=col2; tit= 'Weekly Volume of LUNA Transactions'; xtit='Date'; ytit = 'Volume' ; w=550; h=450 ; logy = False       
         line_plot(data,x,y,a,tit,xtit,ytit,w,h,logy)
         
         # fig2=px.line(transaction_data, x='DATE', y=['LUNA_VOLUME','CUMULATIVE_VOLUME'])#, labels={'x':'Date','y':'Transactions'})
@@ -170,7 +170,7 @@ if transactions:
     
     with t4:
         data= transaction_data; x='DATE'; y=['FEES','TPS']; a=st; 
-        tit= 'Weekly Luna Fees'; xtit='Date'; ytit = 'FEES & TPS' ; w=700; h=450 ; logy = True 
+        tit= 'Weekly Luna Fees'; xtit='Date'; ytit = 'FEES & TPS' ; w=550; h=450 ; logy = True 
 
         fig=scatter_plot(data,x,y,a,tit,xtit,ytit,w,h,logy)
         
@@ -188,7 +188,7 @@ if transactions:
         time_url="https://node-api.flipsidecrypto.com/api/v2/queries/26ca6058-eea3-4bc1-beb0-1f291c10a016/data/latest"
         time_data= pd.read_json(time_url)
         data= time_data; x='DATE'; y=['Average Time Between Blocks','Median Time Between Blocks','Average Transactions Per Block','Median Transactions Per Block']; 
-        a=st; tit= 'Blocks';xtit='Date'; ytit = 'Time Between Blocks' ; w=700; h=450 ; logy = False       
+        a=st; tit= 'Blocks';xtit='Date'; ytit = 'Time Between Blocks' ; w=550; h=450 ; logy = False       
         line_plot(data,x,y,a,tit,xtit,ytit,w,h,logy)
         
         # fig5=px.line(time_data, x='DATE', y=['Average Time Between Blocks','Median Time Between Blocks','Average Transactions Per Block','Median Transactions Per Block'])
@@ -225,7 +225,7 @@ if wallets:
         transaction_url="https://node-api.flipsidecrypto.com/api/v2/queries/266cc6f0-59ce-4226-9a0f-61a3df72183a/data/latest"
         transaction_data= pd.read_json(transaction_url)
         data= transaction_data; x='DATE'; y=['SENDERS','CUMULATIVE_USERS']; 
-        a=col1; tit= 'Weekly Users'; xtit='Date'; ytit = 'Users' ; w=700; h=450 ; logy = False       
+        a=col1; tit= 'Weekly Users'; xtit='Date'; ytit = 'Users' ; w=550; h=450 ; logy = False       
         line_plot(data,x,y,a,tit,xtit,ytit,w,h,logy)
         
         # fig1=px.line(transaction_data, x='DATE', y=['SENDERS','CUMULATIVE_USERS'])#, labels={'x':'Date','y':'Transactions'})
@@ -235,7 +235,7 @@ if wallets:
         users_url="https://node-api.flipsidecrypto.com/api/v2/queries/49bae95f-ce8d-401a-8f3a-d3081e9b4c81/data/latest"
         users_data= pd.read_json(users_url)
         data= users_data; x='MINDATE'; y=['NEW_USERS','TOTAL_USERS']; 
-        a=col2; tit= 'Weekly New Users'; xtit='Date'; ytit = 'New Users' ; w=700; h=450 ; logy = False       
+        a=col2; tit= 'Weekly New Users'; xtit='Date'; ytit = 'New Users' ; w=550; h=450 ; logy = False       
         line_plot(data,x,y,a,tit,xtit,ytit,w,h,logy)
         
         # fig4=px.line(users_data, x='MINDATE', y=['NEW_USERS','TOTAL_USERS'])
@@ -247,7 +247,7 @@ if wallets:
         time_url="https://node-api.flipsidecrypto.com/api/v2/queries/6c01d601-9f5d-42b5-809a-777635bf0751/data/latest"
         time_data= pd.read_json(time_url)
         data= time_data; x='USERS'; y='TXS'; 
-        a=col1; tit= 'Top 10 Users by Transactions'; xtit='Users'; ytit = 'Transactions' ; w=700; h=450 ; logy = False  ; color=None ;barmode='relative'   
+        a=col1; tit= 'Top 10 Users by Transactions'; xtit='Users'; ytit = 'Transactions' ; w=550; h=450 ; logy = False  ; color=None ;barmode='relative'   
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         # fig6=px.bar(time_data, x='USERS', y='TXS')
@@ -257,7 +257,7 @@ if wallets:
         time_url="https://node-api.flipsidecrypto.com/api/v2/queries/b6960eef-5f52-4ecd-b5c2-22d01b9028c7/data/latest"
         time_data= pd.read_json(time_url)
         data= time_data; x='USERS'; y='FEES'; 
-        a=col2; tit= 'Top 10 Users by Paid Fees'; xtit='Users'; ytit = 'FEES' ; w=700; h=450 ; logy = False; color=None ;barmode='relative'  
+        a=col2; tit= 'Top 10 Users by Paid Fees'; xtit='Users'; ytit = 'FEES' ; w=550; h=450 ; logy = False; color=None ;barmode='relative'  
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         # fig7=px.bar(time_data, x='USERS', y='FEES')
@@ -270,7 +270,7 @@ if wallets:
         transaction_data= pd.read_json(transaction_url)
         
         # data= transaction_data; values='USER';  names='TYPE'; #color=None
-        # a=st; tit= 'Distribution of wallets by transactions'; txtpo='inside'; txtinf='percent+label' ; w=700; h=450      
+        # a=st; tit= 'Distribution of wallets by transactions'; txtpo='inside'; txtinf='percent+label' ; w=550; h=450      
         # pie_plot(transaction_data,values,names)#,a,tit,txtpo,txtinf,hole=0.5)
         
         fig8=px.pie(transaction_data, values='USER', names='TYPE' , title='Distribution of wallets by transactions')
@@ -313,7 +313,7 @@ if development:
         transaction_url="https://node-api.flipsidecrypto.com/api/v2/queries/b8161b28-c258-4b79-8e8d-120a39cb2003/data/latest"
         transaction_data= pd.read_json(transaction_url)
         data= transaction_data; x='DATE'; y=['new contracts','Cum Contracts']; 
-        a=col1; tit= 'Weekly Deployed New Contracts'; xtit='Date'; ytit = 'Contracts' ; w=700; h=450 ; logy = False       
+        a=col1; tit= 'Weekly Deployed New Contracts'; xtit='Date'; ytit = 'Contracts' ; w=550; h=450 ; logy = False       
         line_plot(data,x,y,a,tit,xtit,ytit,w,h,logy)
         
         # fig1=px.line(transaction_data, x='DATE', y=['new contracts','Cum Contracts'])#, labels={'x':'Date','y':'Transactions'})
@@ -323,7 +323,7 @@ if development:
         transfer_url="https://node-api.flipsidecrypto.com/api/v2/queries/69e6c13b-64e8-4ff6-8445-d28c7e58e47b/data/latest"
         transfer_data= pd.read_json(transfer_url)
         data= transfer_data; x='DATE'; y='TXS';color="PROJECT_NAME" ;barmode='relative'
-        a=col2; tit= 'Weekly Top 10 Most Interacted Contracts by Name'; xtit='Date'; ytit = 'Transactions' ; w=700; h=450 ; logy = False       
+        a=col2; tit= 'Weekly Top 10 Most Interacted Contracts by Name'; xtit='Date'; ytit = 'Transactions' ; w=550; h=450 ; logy = False       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         
@@ -350,7 +350,7 @@ if development:
         transfer_url="https://node-api.flipsidecrypto.com/api/v2/queries/14458aec-c222-4a0c-84cd-4883b658923f/data/latest"
         transfer_data= pd.read_json(transfer_url)
         data= transfer_data; x='DATE'; y='TXS';color="STABLECOIN" ;barmode='relative'
-        a=col1; tit= 'Weekly Stablecoins Transfers by Transactions'; xtit='Date'; ytit = 'Transactions' ; w=700; h=450 ; logy = False       
+        a=col1; tit= 'Weekly Stablecoins Transfers by Transactions'; xtit='Date'; ytit = 'Transactions' ; w=550; h=450 ; logy = False       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         # fig5=px.bar(transfer_data, x='DATE', y='TXS',color="STABLECOIN")
@@ -360,7 +360,7 @@ if development:
         transfer_url="https://node-api.flipsidecrypto.com/api/v2/queries/14458aec-c222-4a0c-84cd-4883b658923f/data/latest"
         transfer_data= pd.read_json(transfer_url)
         data= transfer_data; x='DATE'; y='USERS';color="STABLECOIN" ;barmode='relative'
-        a=col2; tit= 'Weekly Stablecoins Transfers by Users'; xtit='Date'; ytit = 'Users' ; w=700; h=450 ; logy = False       
+        a=col2; tit= 'Weekly Stablecoins Transfers by Users'; xtit='Date'; ytit = 'Users' ; w=550; h=450 ; logy = False       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         
@@ -373,7 +373,7 @@ if development:
         transfer_url="https://node-api.flipsidecrypto.com/api/v2/queries/14458aec-c222-4a0c-84cd-4883b658923f/data/latest"
         transfer_data= pd.read_json(transfer_url)
         data= transfer_data; x='DATE'; y='VOLUME';color="STABLECOIN" ;barmode='relative'
-        a=col1; tit= 'Weekly Stablecoins Transfers by Volume'; xtit='Date'; ytit = 'Volume' ; w=700; h=450 ; logy = False       
+        a=col1; tit= 'Weekly Stablecoins Transfers by Volume'; xtit='Date'; ytit = 'Volume' ; w=550; h=450 ; logy = False       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         
@@ -386,7 +386,7 @@ if development:
         transfer_url="https://node-api.flipsidecrypto.com/api/v2/queries/9945e1b3-5f6f-47c9-bb63-e7652eb0dde2/data/latest"
         transfer_data= pd.read_json(transfer_url)
         data= transfer_data; x='STABLECOIN'; y=['TOTAL_TXS','TOTAL_USERS','TOTAL_VOLUME'];color=None; barmode='group'
-        a=col1; tit= 'Total Stablecoins Transfer out Activities'; xtit='Stablecoins'; ytit = 'Statistics' ; w=700; h=450 ; logy = True       
+        a=col1; tit= 'Total Stablecoins Transfer out Activities'; xtit='Stablecoins'; ytit = 'Statistics' ; w=550; h=450 ; logy = True       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         # fig7=px.bar(transfer_data, x='STABLECOIN', y=['TOTAL_TXS','TOTAL_USERS','TOTAL_VOLUME'],log_y=True)
@@ -396,7 +396,7 @@ if development:
         transfer_url="https://node-api.flipsidecrypto.com/api/v2/queries/9945e1b3-5f6f-47c9-bb63-e7652eb0dde2/data/latest"
         transfer_data= pd.read_json(transfer_url)
         data= transfer_data; x='STABLECOIN'; y=['AVG_TXS','AVG_USERS','AVG_VOLUME'];color=None; barmode='group'
-        a=col2; tit= 'Average Stablecoins Transfer out Activities'; xtit='Stablecoins'; ytit = 'Statistics' ; w=700; h=450 ; logy = True       
+        a=col2; tit= 'Average Stablecoins Transfer out Activities'; xtit='Stablecoins'; ytit = 'Statistics' ; w=550; h=450 ; logy = True       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         
@@ -409,7 +409,7 @@ if development:
         transaction_url="https://node-api.flipsidecrypto.com/api/v2/queries/13e291b1-0a9f-4ac0-9987-c39cb96a10c4/data/latest"
         transaction_data= pd.read_json(transaction_url)
         data= transaction_data; x='DATES'; y='NET_VOLUME'; color=None; barmode='relative'
-        a=col1; tit= 'Weekly Stablecoins Transfers Netflow Volume'; xtit='Date'; ytit = 'Volume' ; w=700; h=450 ; logy = False       
+        a=col1; tit= 'Weekly Stablecoins Transfers Netflow Volume'; xtit='Date'; ytit = 'Volume' ; w=550; h=450 ; logy = False       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
        
         # fig9=px.bar(transaction_data, x='DATES', y='NET_VOLUME')
@@ -419,7 +419,7 @@ if development:
         transaction_url="https://node-api.flipsidecrypto.com/api/v2/queries/13e291b1-0a9f-4ac0-9987-c39cb96a10c4/data/latest"
         transaction_data= pd.read_json(transaction_url)
         data= transaction_data; x='DATES'; y='CUM_NET_VOLUME'; 
-        a=col2; tit= 'Cumulative Stablecoins Transfers Netflow Volume'; xtit='Date'; ytit = 'Volume' ; w=700; h=450 ; logy = False       
+        a=col2; tit= 'Cumulative Stablecoins Transfers Netflow Volume'; xtit='Date'; ytit = 'Volume' ; w=550; h=450 ; logy = False       
         line_plot(data,x,y,a,tit,xtit,ytit,w,h,logy)
         
         
@@ -432,7 +432,7 @@ if development:
         transaction_url="https://node-api.flipsidecrypto.com/api/v2/queries/6fe0880f-32aa-4777-8583-4eee9cd5a306/data/latest"
         transaction_data= pd.read_json(transaction_url)
         data= transaction_data; x='DATE'; y='VOLUME'; color="TRANSFER_TYPE"; barmode='group'
-        a=col1; tit= 'Weekly axlUSDC Transfers Volume by Type'; xtit='Date'; ytit = 'Volume' ; w=700; h=450 ; logy = False       
+        a=col1; tit= 'Weekly axlUSDC Transfers Volume by Type'; xtit='Date'; ytit = 'Volume' ; w=550; h=450 ; logy = False       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         
@@ -443,7 +443,7 @@ if development:
         transaction_url="https://node-api.flipsidecrypto.com/api/v2/queries/3e7cd40b-c6ef-48b7-b601-3be5240d2601/data/latest"
         transaction_data= pd.read_json(transaction_url)
         data= transaction_data; x='DATE'; y='VOLUME'; color="TRANSFER_TYPE"; barmode='group'
-        a=col2; tit= 'Weekly axlUSDT Transfers Volume by Type'; xtit='Date'; ytit = 'Volume' ; w=700; h=450 ; logy = False       
+        a=col2; tit= 'Weekly axlUSDT Transfers Volume by Type'; xtit='Date'; ytit = 'Volume' ; w=550; h=450 ; logy = False       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         # fig12=px.bar(transaction_data, x='DATE', y='VOLUME',color="TRANSFER_TYPE")
@@ -469,7 +469,7 @@ if development:
         transaction_url="https://node-api.flipsidecrypto.com/api/v2/queries/cab5d3e8-93bf-4d70-a248-c5cfde69dfb4/data/latest"
         transaction_data= pd.read_json(transaction_url)
         data= transaction_data; x='DATE'; y='VOLUME'; color="CURRENCY"; barmode='relative'
-        a=col1; tit= 'Weekly axlUSDT LP Volume per Pool'; xtit='Date'; ytit = 'Volume' ; w=700; h=450 ; logy = True       
+        a=col1; tit= 'Weekly axlUSDT LP Volume per Pool'; xtit='Date'; ytit = 'Volume' ; w=550; h=450 ; logy = True       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         
@@ -480,7 +480,7 @@ if development:
         transaction_url="https://node-api.flipsidecrypto.com/api/v2/queries/d7d25ddf-8e41-4f89-88a5-ba7fb6b654bd/data/latest"
         transaction_data= pd.read_json(transaction_url)
         data= transaction_data; x='DATE'; y='VOLUME'; color="CURRENCY"; barmode='relative'
-        a=col2; tit= 'Weekly axlUSDC LP Volume per Pool'; xtit='Date'; ytit = 'Volume' ; w=700; h=450 ; logy = True       
+        a=col2; tit= 'Weekly axlUSDC LP Volume per Pool'; xtit='Date'; ytit = 'Volume' ; w=550; h=450 ; logy = True       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         
@@ -548,7 +548,7 @@ if supply:
         transaction_url="https://node-api.flipsidecrypto.com/api/v2/queries/be1bcbd4-426e-4269-95b9-453d5e2a54fe/data/latest"
         transaction_data= pd.read_json(transaction_url)
         data= transaction_data; x='DATE'; y='TXS'; color="ACTION"; barmode='relative'
-        a=col1; tit= 'Weekly Staking Transactions'; xtit='Date'; ytit = 'Transactions' ; w=700; h=450 ; logy = False       
+        a=col1; tit= 'Weekly Staking Transactions'; xtit='Date'; ytit = 'Transactions' ; w=550; h=450 ; logy = False       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
        
@@ -557,7 +557,7 @@ if supply:
         # st.plotly_chart(fig1)
 
         data= transaction_data; x='DATE'; y='VOLUME'; color="ACTION"; barmode='relative'
-        a=col2; tit= 'Weekly Staking Volume'; xtit='Date'; ytit = 'Weekly Staking Volume' ; w=700; h=450 ; logy = False       
+        a=col2; tit= 'Weekly Staking Volume'; xtit='Date'; ytit = 'Weekly Staking Volume' ; w=550; h=450 ; logy = False       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         # fig2=px.bar(transaction_data, x='DATE', y='VOLUME',color="ACTION")
@@ -578,7 +578,7 @@ if supply:
         transaction_url="https://node-api.flipsidecrypto.com/api/v2/queries/b908b173-30ae-44c1-92d6-a2c3008d0d03/data/latest"
         transaction_data= pd.read_json(transaction_url)
         data= transaction_data; x='DATES'; y=['Staking Reward USD','Cumulative Staking Reward']; 
-        a=st; tit= 'Staking Rewards (USD)'; xtit='Date'; ytit = 'Staking Reward USD' ; w=700; h=450 ; logy = False       
+        a=st; tit= 'Staking Rewards (USD)'; xtit='Date'; ytit = 'Staking Reward USD' ; w=550; h=450 ; logy = False       
         line_plot(data,x,y,a,tit,xtit,ytit,w,h,logy)
         
         
@@ -620,7 +620,7 @@ if supply:
         transaction_url="https://node-api.flipsidecrypto.com/api/v2/queries/f99e26f5-6c81-41ca-b82d-f8ad115ee617/data/latest"
         transaction_data= pd.read_json(transaction_url)
         data= transaction_data; x='DATE'; y='TXS'; color="BLOCKCHAIN"; barmode='relative'
-        a=col1; tit= 'Weekly IBC Transfers Transactions by Blockchain'; xtit='Date'; ytit = 'Transactions' ; w=700; h=450 ; logy = False       
+        a=col1; tit= 'Weekly IBC Transfers Transactions by Blockchain'; xtit='Date'; ytit = 'Transactions' ; w=550; h=450 ; logy = False       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         
@@ -629,7 +629,7 @@ if supply:
         # st.plotly_chart(fig7)
     
         data= transaction_data; x='DATE'; y='USERS'; color="BLOCKCHAIN"; barmode='relative'
-        a=col2; tit= 'Weekly IBC Transfers Users by Blockchain'; xtit='Date'; ytit = 'Users' ; w=700; h=450 ; logy = False       
+        a=col2; tit= 'Weekly IBC Transfers Users by Blockchain'; xtit='Date'; ytit = 'Users' ; w=550; h=450 ; logy = False       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         
@@ -639,7 +639,7 @@ if supply:
    
     with s13:
         data= transaction_data; x='DATE'; y='VOLUME'; color="BLOCKCHAIN"; barmode='relative'
-        a=st; tit= 'Weekly IBC Transfers Volume by Blockchain'; xtit='Date'; ytit = 'Volume' ; w=700; h=450 ; logy = False       
+        a=st; tit= 'Weekly IBC Transfers Volume by Blockchain'; xtit='Date'; ytit = 'Volume' ; w=550; h=450 ; logy = False       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         # fig9=px.bar(transaction_data, x='DATE', y='VOLUME',color="BLOCKCHAIN")
@@ -651,7 +651,7 @@ if supply:
         transaction_url="https://node-api.flipsidecrypto.com/api/v2/queries/2673fc4e-87f2-4f77-95d4-27b1e57a46f5/data/latest"
         transaction_data= pd.read_json(transaction_url)
         data= transaction_data; x='BLOCKCHAIN'; y='TXS'; color="BLOCKCHAIN"; barmode='relative'
-        a=col1; tit= 'Total IBC Transfers Transactions by Blockchain'; xtit='Date'; ytit = 'Transactions' ; w=700; h=450 ; logy = True       
+        a=col1; tit= 'Total IBC Transfers Transactions by Blockchain'; xtit='Date'; ytit = 'Transactions' ; w=550; h=450 ; logy = True       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
        
         # fig10=px.bar(transaction_data, x='BLOCKCHAIN', y='TXS',color="BLOCKCHAIN",log_y=True)
@@ -659,7 +659,7 @@ if supply:
         # st.plotly_chart(fig10)
     
         data= transaction_data; x='BLOCKCHAIN'; y='USERS'; color="BLOCKCHAIN"; barmode='relative'
-        a=col2; tit= 'Total IBC Transfers Users by Blockchain'; xtit='Date'; ytit = 'Users' ; w=700; h=450 ; logy = True       
+        a=col2; tit= 'Total IBC Transfers Users by Blockchain'; xtit='Date'; ytit = 'Users' ; w=550; h=450 ; logy = True       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
        
         
@@ -669,7 +669,7 @@ if supply:
    
     with s15:
         data= transaction_data; x='BLOCKCHAIN'; y='VOLUME'; color="BLOCKCHAIN"; barmode='relative'
-        a=st; tit= 'Total IBC Transfers Volume by Blockchain'; xtit='Date'; ytit = 'Volume' ; w=700; h=450 ; logy = True       
+        a=st; tit= 'Total IBC Transfers Volume by Blockchain'; xtit='Date'; ytit = 'Volume' ; w=550; h=450 ; logy = True       
         bar_plot(data,x,y,a,tit,xtit,ytit,w,h,logy,color,barmode)
         
         # fig12=px.bar(transaction_data, x='BLOCKCHAIN', y='VOLUME',color="BLOCKCHAIN",log_y=True)
