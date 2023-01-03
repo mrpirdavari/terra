@@ -4,8 +4,6 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 
-st. set_page_config(layout="wide")
-
 def line_plot(data,x,y,a,tit,xtit,ytit,w,h,logy):
     fig=px.line(data, x, y,log_y=logy)
 
